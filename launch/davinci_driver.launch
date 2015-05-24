@@ -2,6 +2,7 @@
 Launch file for the driver.
 
 Karl D. Hansen (kdh@es.aau.dk)
+modified by: Gr1032 year 2014
 -->
 
 <launch>
@@ -50,14 +51,33 @@ Karl D. Hansen (kdh@es.aau.dk)
     />
 
     <node
-        name="controller_spawner_position_controller"
+        name="controller_spawner_position_controller_slide"
         pkg="controller_manager"
         type="spawner"
         respawn="false"
         output="screen"
         ns="davinci"
-        args="p4_hand_controller"
+        args="slide_position_controller"
     />
 
+    <node
+        name="controller_spawner_position_controller_hand_pitch"
+        pkg="controller_manager"
+        type="spawner"
+        respawn="false"
+        output="screen"
+        ns="davinci"
+        args="hand_pitch_position_controller"
+    />
+
+    <node
+        name="controller_spawner_position_controller_hand_roll"
+        pkg="controller_manager"
+        type="spawner"
+        respawn="false"
+        output="screen"
+        ns="davinci"
+        args="hand_roll_position_controller"
+    />
 
 </launch>
